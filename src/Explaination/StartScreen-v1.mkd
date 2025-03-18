@@ -1,0 +1,83 @@
+# Explanation of `StartScreen.js`
+
+```javascript
+import React from "react";
+```
+
+- **Imports React** to define the functional component.
+
+---
+
+## 1. Creating the `StartScreen` Component
+
+```javascript
+function StartScreen({ numQuestions, dispatch }) {
+```
+
+- **Defines the `StartScreen` component** as a function.
+- **Accepts two props**:
+  - `numQuestions`: Number of questions available.
+  - `dispatch`: Function to update the state using the reducer.
+
+---
+
+## 2. JSX Structure
+
+```javascript
+  return (
+    <div className="start">
+      <h2>Welcome to the React Quiz</h2>
+      <h3>{numQuestions} question to test your React mastery</h3>
+```
+
+- **Renders a `div` with class `"start"`** to style the start screen.
+- **Displays a welcome message** using `<h2>`.
+- **Shows the number of questions dynamically** using `{numQuestions}` inside `<h3>`.
+
+---
+
+## 3. Start Button
+
+```javascript
+<button className="btn btn-ui" onClick={() => dispatch({ type: "start" })}>
+  Let's start
+</button>
+```
+
+- **Renders a button** with class `"btn btn-ui"`, allowing custom styling.
+- **Attaches an `onClick` event** that:
+  - Calls `dispatch({ type: "start" })` to update the state in `App.js`.
+  - This changes `status` from `"ready"` to `"active"`, starting the quiz.
+
+---
+
+## 4. Exporting the Component
+
+```javascript
+export default StartScreen;
+```
+
+- **Exports `StartScreen`** so it can be used in `App.js`.
+
+---
+
+### Improvements
+
+✅ **Grammar Fix**:  
+Change `"question"` to `"questions"` in:
+
+```javascript
+<h3>{numQuestions} question to test your React mastery</h3>
+```
+
+➡ **Corrected version**:
+
+```javascript
+<h3>{numQuestions} questions to test your React mastery</h3>
+```
+
+This ensures proper singular/plural handling when `numQuestions > 1`.
+
+---
+
+This Markdown file explains each part of your component in a structured way. Let me know if you need any changes! 🚀
